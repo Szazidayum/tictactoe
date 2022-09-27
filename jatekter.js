@@ -1,7 +1,16 @@
 import Elem from "../elem.js";
 
 class Jatekter{
-
+    #nyertesSor = [
+        [0, 1, 2],
+        [0, 3, 6],
+        [2, 5, 8],
+        [6, 7, 8],
+        [3, 4, 5],
+        [1, 4, 7],
+        [0, 4, 8],
+        [2, 4, 6]
+    ] 
     #lista = [];
 
     constructor(){
@@ -12,17 +21,28 @@ class Jatekter{
         }
         $(window).on("elemreKattintas",(event)=>{
             //console.log(event.detail);
-            this.ertekValtoztatas(event.detail);
+            this.vanNyertes(event.detail);  
         })
     }
-    ertekValtoztatas(id){
-        console.log(id);
-        if(this.#lista[id].getAllapot()==""){
-            this.#lista[id].setAllapot();
-           
-        }
-    }
 
-}
+    vanNyertes(){
+        /* this.#lista[id] */
+
+    for (let i of this.#nyertesSor) {
+        let [elem1, elem2, elem3] = [
+            this.#lista[i[0]].getAllapot(),
+            this.#lista[i[1]].getAllapot(),
+            this.#lista[i[2]].getAllapot()
+        ]
+    if(elem1 != "" && elem2 != "" && elem3 != ""){
+        if((elem1 == elem2 && elem2 == elem3)){
+            console.log("van nyertes");
+        };
+    } }};
+            
+    }
+    
+
+
 
 export default Jatekter;
