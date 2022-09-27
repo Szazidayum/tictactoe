@@ -1,0 +1,24 @@
+*{box-sizing: border-box;}
+
+body {
+    width: 80%;
+
+}
+main{
+    margin: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    position: absolute;
+}
+.jatek {
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: repeat(3, 150px);
+    grid-gap: 10px;
+    height: 100%;
+}
+.jatekElem{
+    border: 1px solid black;
+}
