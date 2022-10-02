@@ -26,6 +26,7 @@ class Jatekter{
     }
 
     vanNyertes(){
+        const kiiras=$(".kiiras");
         /* this.#lista[id] */
 
     for (let i of this.#nyertesSor) {
@@ -36,7 +37,8 @@ class Jatekter{
         ]
     if(elem1 != "" && elem2 != "" && elem3 != ""){
         if((elem1 == elem2 && elem2 == elem3)){
-            console.log("van nyertes");
+            /* console.log("van nyertes"); */
+            kiiras.html("van nyertes");
         };
     } }};
             

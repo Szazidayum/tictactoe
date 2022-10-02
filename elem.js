@@ -9,6 +9,7 @@ class Elem{
         this.#allapot = allapot;
         this.#index= index;
         SZULOELEM.append(`<div class="jatekElem"></div>`);
+        
         this.kockaElem = SZULOELEM.children("div:last-child");
         this.kockaElem.on("click", () =>{
             console.log(this);
@@ -19,10 +20,12 @@ class Elem{
     }
 
     setAllapot(){
+        const kiiras=$(".kiiras");
         if(this.#allapot==""){
             console.log(this.#allapot);
-            this.kockaElem.html(Elem.elem);
+            this.kockaElem.html(`<p>${Elem.elem}</p>`);
             this.kovetkezoElem();
+            kiiras.html("A következő játékos jön: "+Elem.elem)
         }
     }
 
@@ -30,9 +33,11 @@ class Elem{
         if(Elem.elem=="X"){
             Elem.elem="O";
             this.#allapot="O";
+            this.kockaElem.css('color', 'rgb(3, 97, 100)');
         }else{
             Elem.elem="X";
             this.#allapot="X";
+            this.kockaElem.css('color', '#fff');
         };
     }
 
@@ -40,9 +45,9 @@ class Elem{
         return this.#allapot;
     }
     
-    kattintasTrigger(){
-        let event = new CustomEvent("elemreKattintas",{detail:this.#index})
-        window.dispatchEvent(event);
+        kattintasTrigger(){
+            let event = new CustomEvent("elemreKattintas",{detail:this.#index})
+            window.dispatchEvent(event);
     }
 }
 
