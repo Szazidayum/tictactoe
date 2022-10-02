@@ -39,6 +39,7 @@ class Jatekter{
         if((elem1 == elem2 && elem2 == elem3)){
             /* console.log("van nyertes"); */
             kiiras.html("van nyertes");
+            /* console.log(this.#lista[i].getNev()); */
         };
     } }};
             
