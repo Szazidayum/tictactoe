@@ -66,6 +66,18 @@ article {
     color: #fff;
     cursor: pointer;
 }
+#kezd:hover{
+    background-color: #fff;
+    color: rgb(3, 97, 100);
+}
+#kezd.disabled {
+    cursor: default;
+    pointer-events: none;
+
+}
+#kezd:hover.disabled {
+    background-color: rgb(3, 97, 100);
+}
 .kiiras{
     padding-top: 20px;
     font-size: 35px;
@@ -82,8 +94,12 @@ article {
     height: 100%;
 }
 .jatekElem{
+    background-color: rgba(255, 255, 255, 0.329);
     border: 3px solid rgb(3, 97, 100);
     border-radius: 20%;
+}
+.jatekElem:hover{
+    background-color: burlywood;
 }
 .jatekElem p{
     font-size: 125px;

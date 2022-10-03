@@ -1,4 +1,4 @@
-import Elem from "../elem.js";
+import Elem from "../view/elem.js";
 
 class Jatekter{
     #nyertesSor = [
@@ -13,14 +13,17 @@ class Jatekter{
     ] 
     #lista = [];
 
+    
+
     constructor(){
+        const nev = $("#xjatekos").val();
         const SZULOELEM=$(".jatek");
         for (let index = 0; index < 9; index++) {
-            const UJELEM = new Elem(index, "", SZULOELEM);
+            const UJELEM = new Elem(index, "", SZULOELEM, nev);
             this.#lista.push(UJELEM); 
         }
         $(window).on("elemreKattintas",(event)=>{
-            //console.log(event.detail);
+            /* console.log(event.detail); */
             this.vanNyertes(event.detail);  
         })
     }
@@ -37,9 +40,11 @@ class Jatekter{
         ]
     if(elem1 != "" && elem2 != "" && elem3 != ""){
         if((elem1 == elem2 && elem2 == elem3)){
-            /* console.log("van nyertes"); */
-            kiiras.html("van nyertes");
-            /* console.log(this.#lista[i].getNev()); */
+
+            console.log(this.#lista[i[0]].getNev());
+
+            kiiras.html("A nyertes: "+this.#lista[i[0]].getNev());
+            
         };
     } }};
             

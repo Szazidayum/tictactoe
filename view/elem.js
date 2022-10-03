@@ -1,11 +1,11 @@
 class Elem{
 
     static elem = "X";
-    static nev = $("#xjatekos").val();
+    
 
     #allapot;
     #index;
-    constructor(index, allapot, SZULOELEM){
+    constructor(index, allapot, SZULOELEM, nev){
         
         this.#allapot = allapot;
         this.#index= index;
@@ -15,6 +15,7 @@ class Elem{
         this.kockaElem.on("click", () =>{
             /* console.log(this); */
             this.setAllapot();
+          /*   this.getNev(); */
             this.kattintasTrigger();
             
         })
@@ -26,7 +27,7 @@ class Elem{
             console.log(this.#allapot);
             this.kockaElem.html(`<p>${Elem.elem}</p>`);
             this.kovetkezoElem();
-            kiiras.html("A következő játékos jön: "+Elem.nev);
+            kiiras.html("A következő játékos jön: "+this.nev);
         }
     }
 
@@ -35,13 +36,13 @@ class Elem{
             Elem.elem="O";
             this.#allapot="O";
             this.kockaElem.css('color', 'rgb(3, 97, 100)');
-            Elem.nev=$("#ojatekos").val();
+            this.nev=$("#ojatekos").val();
             
         }else{
             Elem.elem="X";
             this.#allapot="X";
             this.kockaElem.css('color', '#fff');
-            Elem.nev=$("#xjatekos").val();
+            this.nev=$("#xjatekos").val();
         };
     }
 
@@ -49,7 +50,7 @@ class Elem{
         return this.#allapot;
     }
     getNev(){
-        return Elem.nev;
+        return this.nev;
     }
     
         kattintasTrigger(){
