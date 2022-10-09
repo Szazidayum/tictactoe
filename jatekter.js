@@ -1,4 +1,4 @@
-import Elem from "../view/elem.js";
+/*import Elem from "./view/elem.js";
 
 class Jatekter{
     #nyertesSor = [
@@ -23,14 +23,14 @@ class Jatekter{
             this.#lista.push(UJELEM); 
         }
         $(window).on("elemreKattintas",(event)=>{
-            /* console.log(event.detail); */
+            console.log(event.detail);
             this.vanNyertes(event.detail);  
         })
     }
 
     vanNyertes(){
         const kiiras=$(".kiiras");
-        /* this.#lista[id] */
+        this.#lista[id]
 
     for (let i of this.#nyertesSor) {
         let [elem1, elem2, elem3] = [
@@ -53,4 +53,4 @@ class Jatekter{
 
 
 
-export default Jatekter;
+export default Jatekter;*/

@@ -1,22 +1,17 @@
-import Jatekter from "../view/jatekter.js";
+import AdatController from "../controller/controller.js";
 
-var jatek;
+let jatek;
 
 const kezdes = $("#kezd");
-var xJatekos = $("#xjatekos");
-var oJatekos = $("#ojatekos");
+let xJatekos = $("#xjatekos");
+let oJatekos = $("#ojatekos");
 const kiiras=$(".kiiras");
 
 kezdes.on("click", function(){
     if(xJatekos.val()=="" || oJatekos.val()==""){
-        kiiras.html("Kérem adja meg mind a két nevet!");
+        kiiras.html("<p>Kérem adja meg mind a két nevet!</p>");
     }else{
-        jatek = new Jatekter();
+        jatek = new AdatController();
         kezdes.addClass("disabled")
     }
 })
-
-$(function(){
-    /* console.log("belépési pont"); */
-    
-});

@@ -2,7 +2,7 @@
 
 *{box-sizing: border-box;}
 
-
+/* ------------------------------ BODY ------------------------------ */
 body {
     width: 100vw;
     height: 100vh;
@@ -11,6 +11,7 @@ body {
     background: cadetblue;
     font-family: 'Montserrat', sans-serif;
 }
+/* ------------------------------ MAIN ------------------------------ */
 main{
     margin: auto;
     width: 100%;
@@ -18,6 +19,7 @@ main{
     background-color: rgb(84, 160, 160);
     
 }
+/* ------------------------------ HEADER ------------------------------ */
 header {
     width: 70%;
     border-bottom: 3px dotted burlywood;
@@ -34,7 +36,7 @@ header h1 {
     text-transform: capitalize;
     margin: 0.5em;
 }
-
+/* ------------------------------ ARTICLE ------------------------------ */
 article {
     width: 70%;
     height: 100%;
@@ -48,6 +50,7 @@ article {
     padding-top: 20px;
     width: 100%;
 }
+/* ------------------------------ NEVEK ------------------------------ */
 .nevek{
     align-content: center;
     border-bottom: 3px dotted burlywood;
@@ -58,6 +61,7 @@ article {
     background-color: #fff;
     height: 2em;
 }
+/* ------------------------------ GOMB ------------------------------ */
 #kezd{
     border: 3px solid #fff;;
     border-radius: .25rem;
@@ -69,6 +73,7 @@ article {
 #kezd:hover{
     background-color: #fff;
     color: rgb(3, 97, 100);
+    cursor: pointer;
 }
 #kezd.disabled {
     cursor: default;
@@ -78,13 +83,14 @@ article {
 #kezd:hover.disabled {
     background-color: rgb(3, 97, 100);
 }
+/* ------------------------------ KIÍRÁS ------------------------------ */
 .kiiras{
-    padding-top: 20px;
     font-size: 35px;
     text-align: center;
     color: #fff;
     border-bottom: 3px dotted burlywood;
 }
+/* ------------------------------ JÁTÉKTÉR ------------------------------ */
 .jatek {
     padding-top: 20px;
     display: grid;
@@ -100,12 +106,14 @@ article {
 }
 .jatekElem:hover{
     background-color: burlywood;
+    cursor: pointer;
 }
 .jatekElem p{
     font-size: 125px;
     margin: 0;
     text-align: center;
 }
+/* ------------------------------ FOOTER ------------------------------ */
 footer{
     padding-top: 30px;
 }
