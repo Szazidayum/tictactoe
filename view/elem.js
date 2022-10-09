@@ -1,60 +1,37 @@
 class Elem{
 
-    static elem = "X";
-    
-
     #allapot;
     #index;
-    constructor(index, allapot, SZULOELEM, nev){
+    constructor(index, allapot){
         
         this.#allapot = allapot;
         this.#index= index;
-        SZULOELEM.append(`<div class="jatekElem"></div>`);
-        
-        this.kockaElem = SZULOELEM.children("div:last-child");
-        this.kockaElem.on("click", () =>{
-            /* console.log(this); */
-            this.setAllapot();
-          /*   this.getNev(); */
+        const elem = `<div class="jatekElem"><p></p></div>`;
+        $(".jatek").append(elem);
+        this.divElem = $(".jatek").children("div:last-child");
+        this.pElem = this.divElem.children("p");
+
+        this.divElem.on("click", () =>{
             this.kattintasTrigger();
+            //ha van nyertes, akkor szedje le az összeset
             
         })
     }
 
-    setAllapot(){
-        const kiiras=$(".kiiras");
-        if(this.#allapot==""){
-            console.log(this.#allapot);
-            this.kockaElem.html(`<p>${Elem.elem}</p>`);
-            this.kovetkezoElem();
-            kiiras.html("A következő játékos jön: "+this.nev);
-        }
-    }
-
-    kovetkezoElem(){
-        if(Elem.elem=="X"){
-            Elem.elem="O";
-            this.#allapot="O";
-            this.kockaElem.css('color', 'rgb(3, 97, 100)');
-            this.nev=$("#ojatekos").val();
-            
+    setErtek(jel){
+        this.pElem.html(jel);
+        if(jel=="X"){
+            this.pElem.css('color', 'rgb(3, 97, 100)');
         }else{
-            Elem.elem="X";
-            this.#allapot="X";
-            this.kockaElem.css('color', '#fff');
-            this.nev=$("#xjatekos").val();
-        };
-    }
-
-    getAllapot(){
-        return this.#allapot;
-    }
-    getNev(){
-        return this.nev;
+            this.pElem.css('color', '#fff');
+        }
+        this.#allapot=true;
+        this.divElem.off('click');
+        
     }
     
         kattintasTrigger(){
-            let event = new CustomEvent("elemreKattintas",{detail:this})
+            let event = new CustomEvent("elemreKattintas",{detail:this.#index})
             window.dispatchEvent(event);
     }
 }
